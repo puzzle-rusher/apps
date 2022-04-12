@@ -62,6 +62,7 @@ async fn main() {
 
     let ChannelOutput::Metadata(meta) =
         msg::send_and_wait_for_reply(register.address.into(), ChannelAction::Meta, 0)
+            .expect("Error in sending message")
             .await
             .expect("ROUTER: Error processing async message");
 
